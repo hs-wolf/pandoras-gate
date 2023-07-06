@@ -16,7 +16,7 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
-  modules: ['@nuxtjs/robots', '@nuxtjs/tailwindcss', '@vueuse/nuxt', '@nuxtjs/i18n', 'nuxt-icons'],
+  modules: ['@nuxtjs/robots', '@nuxtjs/tailwindcss', '@vueuse/nuxt', '@nuxtjs/i18n', 'nuxt-icons', '@nuxt/image'],
   i18n: {
     locales: [
       {
