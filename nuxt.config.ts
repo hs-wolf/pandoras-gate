@@ -16,5 +16,20 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
-  modules: ['@nuxtjs/robots', '@nuxtjs/tailwindcss', '@vueuse/nuxt'],
+  modules: ['@nuxtjs/robots', '@nuxtjs/tailwindcss', '@vueuse/nuxt', '@nuxtjs/i18n'],
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        file: 'en.yaml',
+      },
+      {
+        code: 'pt',
+        file: 'pt.yaml',
+      },
+    ],
+    defaultLocale: 'en',
+    lazy: true,
+    langDir: 'locales',
+  },
 });
