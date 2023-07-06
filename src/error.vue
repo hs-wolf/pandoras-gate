@@ -10,6 +10,8 @@ const handleError = () => clearError({ redirect: '/' });
   <div class="flex flex-col items-center">
     <h1>Error Page</h1>
     <p>{{ error?.message }}</p>
-    <button @click="handleError" class="font-bold">Clear Error</button>
+    <button class="font-bold" @click="handleError">
+      Clear Error
+    </button>
   </div>
 </template>

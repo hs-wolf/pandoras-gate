@@ -16,7 +16,15 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
-  modules: ['@nuxtjs/robots', '@nuxtjs/tailwindcss', '@vueuse/nuxt', '@nuxtjs/i18n', 'nuxt-icons', '@nuxt/image'],
+  modules: [
+    '@nuxtjs/robots',
+    '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
+    '@nuxtjs/i18n',
+    'nuxt-icons',
+    '@nuxt/image',
+    '@nuxtjs/eslint-module',
+  ],
   i18n: {
     locales: [
       {
@@ -31,5 +39,8 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     lazy: true,
     langDir: 'locales',
+  },
+  eslint: {
+    fix: true,
   },
 });
