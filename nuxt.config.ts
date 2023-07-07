@@ -20,6 +20,7 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
+  css: ['assets/css/global.css'],
   modules: [
     '@nuxtjs/robots',
     '@nuxtjs/tailwindcss',
