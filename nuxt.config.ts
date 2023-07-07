@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  nitro: {
+    compressPublicAssets: true,
+  },
   devtools: { enabled: true },
   srcDir: 'src/',
   app: {
@@ -7,11 +10,12 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en',
       },
-      title: 'Pandoras Gate',
+      title: 'Nuxt3 Template App',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Pandoras Gate TTRPG' },
+        { name: 'description', content: 'Nuxt3 Template App' },
+        { name: 'theme-color', content: '#000000' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
@@ -58,6 +62,6 @@ export default defineNuxtConfig({
   image: {},
   // https://github.com/nuxt-community/eslint-module
   eslint: {
-    fix: true,
+    lintOnStart: false,
   },
-});
+})

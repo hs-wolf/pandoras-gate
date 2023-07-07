@@ -1,5 +1,9 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": false
+  },
   "editor.formatOnSave": true,
   "editor.quickSuggestions": {
     "strings": true
