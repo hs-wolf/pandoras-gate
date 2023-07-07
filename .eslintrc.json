@@ -1,26 +1,3 @@
 {
-  "extends": ["@nuxtjs/eslint-config-typescript"],
-  "rules": {
-    "no-console": "off",
-    "comma-dangle": ["error", "always-multiline"],
-    "semi": ["error", "always"],
-    "curly": "error",
-    "indent": ["error", 2],
-    "no-confusing-arrow": "error",
-    "no-tabs": "error",
-    "quotes": ["error", "single", { "avoidEscape": true }],
-    "array-bracket-spacing": ["error", "never"],
-    "object-curly-spacing": ["error", "always"],
-    "computed-property-spacing": ["error", "never"],
-    "space-in-parens": ["error", "never"],
-    "no-unused-vars": "error",
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^_",
-        "caughtErrorsIgnorePattern": "^_"
-      }
-    ]
-  }
+  "extends": ["@nuxtjs/eslint-config-typescript", "plugin:prettier/recommended"]
 }
