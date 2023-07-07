@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .page {
+        @apply flex flex-col h-full;
+    }
+    .page-scrollable {
+        @apply flex flex-col overflow-hidden scrollbar-hide;
+    }
+    .layout {
+        @apply relative flex flex-col h-full;
+    }
+    .btn-base {
+        @apply flex px-2 py-1 border shadow-sm rounded-sm transition-all;
+        @apply active:scale-95 active:rounded-md;
+    }
+    .btn-primary {
+        @apply bg-primary border-primary text-secondary;
+        @apply active:bg-primary-dark active:border-primary-dark active:text-secondary-light;
+    }
+    .btn-secondary {
+        @apply bg-secondary border-secondary text-primary;
+        @apply active:bg-secondary-dark active:border-secondary-dark active:text-primary-dark;
+    }
+    .btn-accent {
+        @apply bg-accent border-accent text-secondary;
+        @apply active:bg-accent-dark active:border-accent-dark active:text-secondary-light;
+    }
+    .btn-danger {
+        @apply border-danger text-danger;
+        @apply active:bg-danger active:text-secondary;
+    }
+}

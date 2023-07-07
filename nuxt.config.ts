@@ -6,21 +6,23 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir: 'src/',
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {
       htmlAttrs: {
         lang: 'en',
       },
-      title: 'Nuxt3 Template App',
+      title: 'Pandoras Gate',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Nuxt3 Template App' },
+        { name: 'description', content: 'Pandoras Gate' },
         { name: 'theme-color', content: '#000000' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
-  css: ['assets/css/global.css'],
+  css: ['assets/css/global.css', 'assets/css/transitions.css'],
   modules: [
     '@nuxtjs/robots',
     '@nuxtjs/tailwindcss',
