@@ -14,10 +14,15 @@ export const useLocalesStore = defineStore(LOCALES_STORE_ID, {
   getters: {},
   actions: {
     changeLocale(locale: AppLang) {
-      this.saveLocale(locale)
-      this.rtlList.includes(locale) ? (this.direction = AppDirection.RTL) : (this.direction = AppDirection.LTR)
-      const switchLocalePath = useSwitchLocalePath()
-      navigateTo(switchLocalePath(locale))
+      try {
+        this.saveLocale(locale)
+        this.rtlList.includes(locale) ? (this.direction = AppDirection.RTL) : (this.direction = AppDirection.LTR)
+        const switchLocalePath = useSwitchLocalePath()
+        navigateTo(switchLocalePath(locale))
+      }
+      catch (error) {
+        useAlertsStore().handleError(error)
+      }
     },
     saveLocale(locale: AppLang) {
       try {
@@ -28,10 +33,15 @@ export const useLocalesStore = defineStore(LOCALES_STORE_ID, {
       }
     },
     loadLocale() {
-      let value = localStorage.getItem(LOCALE_STORAGE_KEY)
-      if (!value || value === 'null')
-        value = AppLang.EN
-      this.changeLocale(value as AppLang)
+      try {
+        let value = localStorage.getItem(LOCALE_STORAGE_KEY)
+        if (!value || value === 'null')
+          value = AppLang.EN
+        this.changeLocale(value as AppLang)
+      }
+      catch (error) {
+        useAlertsStore().handleError(error)
+      }
     },
   },
 })

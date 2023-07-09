@@ -1,20 +1,32 @@
 <script setup lang="ts">
-import { useThemesStore } from '~/stores'
+import { useLocalesStore, useThemesStore } from '~/stores'
+import type { AppLang } from '~/utils'
 import { AppTheme } from '~/utils'
 
+const { availableLocales, locale: currentLocale } = useI18n()
 const localeRoute = useLocaleRoute()
+const localesStore = useLocalesStore()
 const themesStore = useThemesStore()
 const { theme } = storeToRefs(themesStore)
 
 const showSideMenu = ref(false)
 const sideMenuRef = ref<HTMLElement | null>(null)
-
-onClickOutside(sideMenuRef, () => {
-  closeSideMenu()
-})
+onClickOutside(sideMenuRef, () => closeSideMenu())
 
 function closeSideMenu() {
   showSideMenu.value = false
+}
+
+function rotateLanguage() {
+  const languageIndex = availableLocales.findIndex(locale => locale === currentLocale.value)
+  let nextIndex = 0
+
+  if (languageIndex >= 0)
+    nextIndex = languageIndex + 1
+  if (nextIndex >= availableLocales.length)
+    nextIndex = 0
+
+  localesStore.changeLocale(availableLocales[nextIndex] as AppLang)
 }
 
 const items = [
@@ -48,10 +60,14 @@ const items = [
     </div>
     <Transition name="slide-left">
       <div v-if="showSideMenu" class="z-10 fixed inset-0 bg-primary-dark/50">
-        <div ref="sideMenuRef" class="side-menu-card">
+        <div ref="sideMenuRef" class="side-menu">
           <div class="flex justify-between text-2xl">
             <button @click.prevent="closeSideMenu">
               <NuxtIcon name="x-close" />
+            </button>
+            <button class="flex items-center gap-2" @click.prevent="rotateLanguage">
+              <NuxtIcon name="language" />
+              <NuxtIcon :name="`flags/${currentLocale}`" filled />
             </button>
             <button @click.prevent="themesStore.toggleTheme">
               <NuxtIcon :name="theme === AppTheme.DARK ? 'moon' : 'sun'" />
@@ -72,7 +88,11 @@ const items = [
   @apply flex justify-center items-center text-2xl text-accent;
   @apply transition-colors active:bg-accent-dark active:text-secondary;
 }
-.side-menu-card {
-  @apply flex flex-col w-4/5 h-full px-3 py-4 bg-secondary dark:bg-primary overflow-y-scroll scrollbar-hide;
+.side-menu {
+  @apply flex flex-col w-4/6 h-full px-3 py-4 bg-secondary dark:bg-primary overflow-y-scroll scrollbar-hide;
+}
+.language-menu {
+  @apply absolute top-[calc(100%+1rem)] flex flex-col items-center gap-3 p-3 bg-secondary-light border border-secondary-dark rounded-sm;
+  @apply dark:bg-primary-dark dark:border-primary-light;
 }
 </style>

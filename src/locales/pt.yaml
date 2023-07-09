@@ -1,1 +1,9 @@
 title: Pandoras Gate
+pages:
+  home:
+    title: Início
+  characters:
+    title: Personagens
+    your-characters: Seus Personagens
+    new-character: Novo Personagem
+    other-characters: Outros Personagens

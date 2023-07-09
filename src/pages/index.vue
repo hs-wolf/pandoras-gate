@@ -2,6 +2,8 @@
 
 <template>
   <div class="page">
-    Home
+    <h1 class="px-3 py-4 text-2xl font-semibold leading-none">
+      {{ $t('pages.home.title') }}
+    </h1>
   </div>
 </template>

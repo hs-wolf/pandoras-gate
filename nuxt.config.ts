@@ -4,6 +4,18 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
   },
   devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      firebase: {
+        apiKey: 'AIzaSyBornH3NwCcRH_1mFE1hK6KP5nidBokjrs',
+        authDomain: 'pandoras-gate-11192.firebaseapp.com',
+        projectId: 'pandoras-gate-11192',
+        storageBucket: 'pandoras-gate-11192.appspot.com',
+        messagingSenderId: '861573688033',
+        appId: '1:861573688033:web:03161ed2b241fdaf65a5a0',
+      },
+    },
+  },
   srcDir: 'src/',
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -36,7 +48,9 @@ export default defineNuxtConfig({
   // https://github.com/nuxt-community/robots-module
   robots: {},
   // https://github.com/nuxt-modules/tailwindcss
-  tailwindcss: {},
+  tailwindcss: {
+    viewer: false,
+  },
   // https://github.com/vueuse/vueuse
   vueuse: {},
   // https://github.com/vuejs/pinia/tree/v2/packages/nuxt
@@ -56,7 +70,6 @@ export default defineNuxtConfig({
       },
     ],
     defaultLocale: 'en',
-    lazy: true,
     langDir: 'locales',
   },
   // https://github.com/gitFoxCode/nuxt-icons

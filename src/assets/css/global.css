@@ -17,5 +17,5 @@ body {
 
 /* NEEDED SETTINGS */
 .nuxt-icon svg {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
