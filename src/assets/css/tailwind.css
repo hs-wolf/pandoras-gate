@@ -4,16 +4,16 @@
 
 @layer components {
     .page {
-        @apply flex flex-col h-full;
+        @apply flex flex-col;
     }
     .page-scrollable {
-        @apply flex flex-col overflow-hidden scrollbar-hide;
+        @apply flex flex-col overflow-scroll scrollbar-hide;
     }
     .layout {
         @apply relative flex flex-col h-full;
     }
     .btn-base {
-        @apply flex px-2 py-1 border shadow-sm rounded-sm transition-all;
+        @apply flex px-2 py-1.5 border shadow-sm rounded-sm transition-all;
         @apply active:scale-95 active:rounded-md;
     }
     .btn-primary {

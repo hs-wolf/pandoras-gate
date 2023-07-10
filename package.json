@@ -13,9 +13,12 @@
   "dependencies": {
     "@nuxtjs/robots": "^3.0.0",
     "@pinia/nuxt": "^0.4.11",
+    "@vee-validate/nuxt": "^4.10.6",
+    "@vee-validate/zod": "^4.10.6",
     "firebase": "^10.0.0",
     "nuxt-icons": "^3.2.1",
-    "pinia": "^2.1.4"
+    "pinia": "^2.1.4",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.7",

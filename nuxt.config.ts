@@ -44,6 +44,7 @@ export default defineNuxtConfig({
     'nuxt-icons',
     '@nuxt/image',
     '@nuxtjs/eslint-module',
+    '@vee-validate/nuxt',
   ],
   // https://github.com/nuxt-community/robots-module
   robots: {},
@@ -79,5 +80,9 @@ export default defineNuxtConfig({
   // https://github.com/nuxt-community/eslint-module
   eslint: {
     lintOnStart: false,
+  },
+  // https://vee-validate.logaretm.com/v4/integrations/nuxt/
+  veeValidate: {
+    autoImports: true,
   },
 })

@@ -1,4 +1,14 @@
 title: Pandoras Gate
+zod-errors:
+  required: This field is required.
+  min: This field needs a minimum of {min} characters.
+  max: This field can have a maximum of {min} characters.
+  email: This field must be a valid e-mail.
+  not-number: This field must have only numbers.
+  not-date: This field must be a valid date.
+  array-min: You need to select at least {min} options.
+  password-match: The passwords don't match.
+  email-match: The emails don't match.
 pages:
   home:
     title: Início
@@ -7,3 +17,20 @@ pages:
     your-characters: Seus Personagens
     new-character: Novo Personagem
     other-characters: Outros Personagens
+  login:
+    title: Entrar
+    form:
+      email: Email
+      password: Senha
+    submit: Entrar
+  register:
+    title: Registrar
+    form:
+      username: Username
+      email: Email
+      password: Senha
+      confirm: Confirme a Senha
+    submit: Registrar
+components:
+  login: Entrar
+  register: Registrar

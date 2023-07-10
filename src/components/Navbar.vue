@@ -29,6 +29,11 @@ function rotateLanguage() {
   localesStore.changeLocale(availableLocales[nextIndex] as AppLang)
 }
 
+function goToPage(name: string) {
+  closeSideMenu()
+  navigateTo(localeRoute({ name }))
+}
+
 const items = [
   {
     name: 'menu',
@@ -73,6 +78,14 @@ const items = [
               <NuxtIcon :name="theme === AppTheme.DARK ? 'moon' : 'sun'" />
             </button>
           </div>
+          <div class="grid grid-cols-2 gap-2">
+            <button class="btn-base btn-accent" @click.prevent="goToPage('login')">
+              {{ $t('components.login') }}
+            </button>
+            <button class="btn-base" :class="theme === AppTheme.LIGHT ? 'btn-primary' : 'btn-secondary'" @click.prevent="goToPage('register')">
+              {{ $t('components.register') }}
+            </button>
+          </div>
         </div>
       </div>
     </Transition>
@@ -89,7 +102,7 @@ const items = [
   @apply transition-colors active:bg-accent-dark active:text-secondary;
 }
 .side-menu {
-  @apply flex flex-col w-4/6 h-full px-3 py-4 bg-secondary dark:bg-primary overflow-y-scroll scrollbar-hide;
+  @apply flex flex-col gap-8 w-4/6 h-full px-3 py-4 bg-secondary dark:bg-primary overflow-y-scroll scrollbar-hide;
 }
 .language-menu {
   @apply absolute top-[calc(100%+1rem)] flex flex-col items-center gap-3 p-3 bg-secondary-light border border-secondary-dark rounded-sm;
