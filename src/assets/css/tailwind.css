@@ -4,7 +4,7 @@
 
 @layer components {
     .page {
-        @apply flex flex-col;
+        @apply flex-1 flex flex-col;
     }
     .page-scrollable {
         @apply flex flex-col overflow-scroll scrollbar-hide;

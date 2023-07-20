@@ -13,6 +13,15 @@ export enum AppTheme {
   LIGHT = 'light',
 }
 
+export interface User {
+  id: string
+  username: string
+  email: string
+  avatar: string
+}
+
+export type UserRegisterParams = Pick<User, 'username' | 'email' | 'avatar'>
+
 export interface Character {
   id: string
   userId: string
